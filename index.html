@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="./style.css">
+  <title>Interactive card details form</title>
+
+</head>
+<body>
+ 
+<div class="container">
+  <section class="images">
+    <div class="card-front">
+      <img src="./images/card-logo.svg" alt="card-logo" class="card-logo">
+      <p class="expiry-count-display">0000 0000 0000 0000</p>
+      <div class="name-date">
+        <p class="name-display">Jane Appleseed</p>
+        <p><span class="month-display">00</span>/<span class="year-display">00</span></p>
+      </div>
+    </div>
+
+    <div class="card-back">
+      <p class="cvc-display">000</p>
+    </div>
+  </section>
+
+  <section class="confirm-card">
+    <form action="#">
+
+      <label for="name">
+       <p>Cardholder Name</p> 
+        <input type="text" name="name" id="name" placeholder=" e.g. Jane Appleseed">
+        <small class="error">Can't be blank</small>
+      </label>
+
+      <label for="number">
+        <p>Card Number</p>
+        <input type="number" name="number" id="count" placeholder=" e.g. 1234 5678 9123 0000">
+        <small class="error">Wrong format,numbers only</small>
+      </label>
+
+        <div class="expiry-date">
+          <div class="date-input">
+            <p> Exp. Date (MM/YY)</p>
+          <div class="inputs-date">
+              <input type="number" name="expiry-month" id="expiry-month" placeholder="MM">
+              <input type="number" name="expiry-year" id="expiry-year" placeholder="YY">
+             
+           </div> 
+           <small class="error">Can't be blank</small>
+          </div>
+
+          <div class="cvc-input">
+            <p>Cvc</p>
+            <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+            <small class="error">Can't be blank</small>
+          </div>
+
+        </div>
+      </form>
+      <button class="btn">confirm</button>
+  </section>
+
+   <!-- Completed state start -->
+
+   <section class="complete">
+    <img src="./images/icon-complete.svg" alt="icon-complete">
+    <h2>Thank you!</h2>
+    <p>We've added your card details</p>
+    <button class="btn">Continue</button>
+    </section>
+
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

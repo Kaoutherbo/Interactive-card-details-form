@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+        /* Colors */
+
+        /* Primary */
+    
+    --Linear-gradient-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --Red-error: hsl(0, 100%, 66%);
+    
+        /* Neutral */
+    
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    
+   /*  Fonts */
+    
+    --Font-size: 18px;
+    --Font-Family: 'Space Grotesk',sans-serif;
+    --Font-Weight: 500;
+
+    /* Border of error state */
+
+    --debug:1px solid var(var(--Red-error));
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: var(--Font-Family);
+    font-size: var(--Font-size);
+    font-weight: var(--Font-Weight);
+    background-color: var(--White);
+}
+img{
+    max-width: 100%;
+}
+.container{
+    display: flex;
+}
+.images{
+    width: 35%;
+    height: 100vh;
+    background-image: url('./images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-front{
+    background-image: url('./images/bg-card-front.png');
+    background-repeat: no-repeat;
+    width: 447px;
+    height:235px;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    transform: translate(40%,90%);
+}
+.card-logo{
+   margin-bottom: 3rem;
+}
+.card-front .expiry-count-display{
+    font-size: 2.1rem;
+    color: var(--White);
+    margin-bottom: 1rem;
+}
+.name-date{
+    display: flex;
+    justify-content: space-between;
+    color: var(--Light-grayish-violet);
+}
+.card-back{
+    background-image: url('./images/bg-card-back.png');
+    background-repeat: no-repeat;
+    width: 447px;
+    height:235px;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    transform: translate(60%,110%);
+}
+.card-back .cvc-display{
+    color: var(--White);
+    position: absolute;
+    top: 110px;
+    right: 60px;
+}
+.confirm-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20rem;
+    width: 300px;
+    gap: 2rem;
+}
+.error{
+    color: var(--Red-error);
+    font-size: 10px;
+    text-transform: none;
+    display: none;
+}
+
+.btn{
+    height:40px;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.complete{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-left: 20rem;
+    display: none;
+}
+.complete h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 1rem 0 10px 0;
+}
+.complete p{
+    color: var(--Dark-grayish-violet);
+    margin-bottom: 2rem;
+}
+.complete .btn{
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+label,.date-input p,.cvc-input p{
+    font-size: 13px;
+    font-weight: var(--Font-Weight);
+    color: var(--Very-dark-violet);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+input{
+    width:100%;
+    height: 40px;
+    border:1px solid var(--Light-grayish-violet);
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: .4rem;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.expiry-date{
+    display: flex;
+    gap: 10px;
+}
+.inputs-date{
+    display: flex;
+    gap: 10px;
+}
+#expiry-month,#expiry-year{
+    width: 75px;
+}
+@media (max-width:800px) {
+    .container{
+        flex-direction: column;
+    }
+    .images{
+        width: 100%;
+        background-size: cover;
+        background-image: url('./images/bg-main-mobile.png');
+        height: 270px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .confirm-card{
+        margin-top: 5rem;
+        margin-left: 0;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .card-front,.card-back{
+        width: 300px; 
+        height: 100%;
+        background-size: 280px; 
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .card-back{
+        transform: translate(25%,40%);  
+
+    }
+    .card-back .cvc-display{
+        top: 65px;
+        left: 220px;
+        font-size: 14px;
+    }
+    .card-front{
+        transform: translate(10%,6%);
+        z-index: 2;
+    }
+    .card-front .expiry-count-display{
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .card-logo {
+        width: 20%;
+        margin-bottom: 2rem;
+    }
+    .card-front .name-date p{
+        font-size: 14px;
+    }
+    .name-date{
+        justify-content: start;
+        gap: 7rem;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
